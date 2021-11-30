@@ -20,9 +20,8 @@ def viewPhoto(request, pk):
 
 
 def addPhoto(request):
-    user = request.user
 
-    categories = user.category_set.all()
+    categories = Category.objects.all()
 
     if request.method == 'POST':
         data = request.POST
@@ -32,7 +31,6 @@ def addPhoto(request):
             category = Category.objects.get(id=data['category'])
         elif data['category_new'] != '':
             category, created = Category.objects.get_or_create(
-                user=user,
                 name=data['category_new'])
         else:
             category = None

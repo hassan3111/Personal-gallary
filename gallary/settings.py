@@ -110,15 +110,15 @@ DATABASES['default'].update(db_from_env)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'pictures',
-        'PASSWORD': '12345',
-        'USER': 'access',
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'pictures',
+#         'PASSWORD': '12345',
+#         'USER': 'access',
 
-    }
-}
+#     }
+# }
 
 
 # Password validation
