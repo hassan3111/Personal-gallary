@@ -34,17 +34,7 @@ if config('MODE')=="dev":
        
    }
 
-else:
-   DATABASES = {
-       'default': dj_database_url.config(
-           default=config('DATABASE_URL')
-       )
-   }
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -56,8 +46,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-adtjy*x!f#k_$fv5g-xgp4zuzzx95fh82d1ba!a-4r(4m-78vl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
-ALLOWED_HOSTS='.localhost','.herokuapp.com','.127.0.0.1'
 
 
 # Application definition
