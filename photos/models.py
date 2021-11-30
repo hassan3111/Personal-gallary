@@ -9,8 +9,8 @@ class Category(models.Model):
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
 
-    user = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, blank=True)
+    # user = models.ForeignKey(
+    #     User, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=100, null=False, blank=False)
 
     def __str__(self):
@@ -46,7 +46,7 @@ class Photo(models.Model):
         verbose_name_plural = 'Photos'
     
     category = models.ForeignKey(
-        Category, on_delete=models.SET_NULL, null=True, blank=True)
+    Category, on_delete=models.SET_NULL, null=True, blank=True)
     image = models.ImageField(null=False, blank=False)
     description = models.TextField()
     location=models.ForeignKey(Location,on_delete=models.CASCADE,null=True)
