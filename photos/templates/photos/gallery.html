@@ -43,8 +43,10 @@
                         </li>
                         {% for category in categories %}
                         <li class=" list-group-item">
-                            <a href="{% url 'gallery' %}?category={{category.name}}">
-                                {{category.name}}
+                            <a href="{% url 'gallery' %}?category={{category.category_name}}">
+                                {{category.category_name}}
+                                {{category.location_name}}
+                            </a>
                             </a>
                         </li>
                         {% endfor %}
