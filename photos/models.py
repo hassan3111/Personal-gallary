@@ -46,15 +46,13 @@ class Photo(models.Model):
         verbose_name_plural = 'Photos'
     
     category = models.ForeignKey(
-    Category, on_delete=models.SET_NULL, null=True, blank=True)
+        Category, on_delete=models.SET_NULL, null=True, blank=True)
     image = models.ImageField(null=False, blank=False)
     description = models.TextField()
     location=models.ForeignKey(Location,on_delete=models.CASCADE,null=True)
 
-
     def __str__(self):
-        return self.name
-
+        return self.description
     def save_image(self):
         self.save()
 
